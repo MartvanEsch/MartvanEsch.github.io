@@ -47,122 +47,152 @@ table {
 	border-spacing: 0;
 }
 
+/* Custom CSS */
+
 body {
+  transition: all 0.5s ease-in-out;
   height: 500vh;
   width: 90vw;
-  margin-top: 2vh;
-  background-color: whitesmoke;
+  background-color: white;
+  padding: 1vw;
+  box-sizing: border-box;
+  transform: skew(0deg, 5deg);
+  opacity: 0;
 }
-
+.visible {
+  transform: skew(0deg, 0deg);
+  opacity: 1;
+}
 html {
   display: flex;
   justify-content: center;
+  background-color: whitesmoke; 
 }
 
+/* Navigation bar */
 nav {
   font-family: "Gantari", sans-serif;
   font-weight: 500;
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
   font-size: 1rem;
+
   a {
-    padding: 3px;
+    padding: 5px;
     margin-top: 15px;
     margin-left: 50px;
     background-color: black;
     color: whitesmoke;
+    box-sizing: border-box;
   }
+
   a:hover {
     background-color: whitesmoke;
     color: black;
     border: 1px solid black;
-    box-sizing: border-box;
-
+    padding: 4px; /* Adjust padding to maintain size */
+  }
+}
+@media (max-width: 768px) {
+  nav {
+    justify-content: space-between;
+    a {
+      margin-left: 0;
+    }
   }
 }
 
-* {
-  transition: all 0.5s;
+/* Text styling */
+h1, h2, h3, p {
+  font-family: "Gantari", sans-serif;
 }
 
 h1 {
-  font-family: "Gantari", sans-serif;
   font-weight: 600;
-  font-size: 5rem;
-  text-wrap: nowrap;
-  span {
-    font-size: 0.1em
-  }
+  font-size: clamp(1.5rem, 8vw, 15rem);
+  white-space: nowrap;
+ span {
+  font-size: 0.33em;
+ }
 }
+
 h2 {
-  font-family: "Gantari", sans-serif;
   font-weight: 500;
   font-size: 1rem;
 }
+
+h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
 p {
-  font-family: "Gantari", sans-serif;
   font-weight: 200;
-  font-size: 0.9rem;
-  margin-bottom: 75px;
+  font-size: 2rem;
+  margin-bottom: 100px;
 }
 
-article {
-  width: 90vw;
-  height: fit-content;
-  padding: 20px;
-  box-sizing: border-box;
-  border-radius: 50px 50px 0 0;
-  min-height: 75px;
-  div {
-    margin: 15px;
-  }
-  overflow: hidden;
-  position: relative;
-}
-
-section > article:nth-child(1) {
-  background-color: coral;
-  margin-top: -50;
-}
-section > article:nth-child(2) {
-  background-color: orangered;
-  margin-top: -50px;
-}
-section > article:nth-child(3) {
-  margin-top: -50px;
-  background-color: red;
-}
-section > article:nth-child(4) {
-  margin-top: -50px;
-  background-color: crimson;
-}
-
-section > article:nth-child(5) {
-  margin-top: -50px;
-  background-color: darkred;
-}
-
-.sizeDown {
-  transform: scale(0.95);
-  transform: translate(0, 30%);
-  overflow: hidden;
-  opacity: 0;
-}
-
+/* Main introduction section */
 #introduction {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background-color: orange;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin: 20px 0 40px;
+  padding: 20px;
+
   div {
-    width: 5px;
+
+    
+    width: 10px;
     background-color: black;
     align-self: stretch;
-    margin: 10px;
+    margin: 10px; 
+    margin-left: 50px;
+    margin-right: 50px;
   }
+  p {
+    font-weight: 600;
+    margin-bottom: unset;
+  }
+}
+
+#recent-projects {
   padding: 20px;
+  background-color: crimson;
+  color: whitesmoke;
+
+  div {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  article {
+    margin-top: 10px;
+    width: 50vw;
+    padding: 20px;
+    background-color: black;
+    display: flex;
+    margin-right: 20px;
+    justify-content: space-around;
+    
+    img {
+      height: 300px;
+      width: 300px;
+      object-fit: cover;
+    }
+    h3 {
+      max-width: 15vw;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin-right: 20px;
+      p {
+        font-size: 1rem;  
+      }
+    }
+  }
 }
