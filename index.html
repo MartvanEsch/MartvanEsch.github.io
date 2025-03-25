@@ -12,9 +12,10 @@
 </head>
 <body>
   <nav>
+    <a>Work</a>
     <a>About</a>
     <a>Contact</a>
-    <a>Resumé</a>
+    <a href="cv/CV_ENGL_MartvanEsch_G1.pdf">Resumé</a>
   </nav>
   <main>
     <div id="introduction">
@@ -24,30 +25,56 @@
     </div>
     <p><em>Not Just Looks—Design That Works</em></p>
     <section id="recent-projects">
-      <h2>Recent Projects of mine</h2>
+      <h2>Recent Projects</h2>
       <div>
-        <article>
-          <div>
-            <h3>Boxtel through my eyes</h3>
-            <p>Poster Design</p>
-          </div>
-          <img src="img/portfolio_poster1.jpg">
-        </article>
-        <article>
-          <div>
-            <h3>TEDx Lets Make</h3>
-            <p>Event branding</p>
-          </div>
-          <img src="img/portfolio_brand_mockup.png">
-        </article>
-        <article>
-          <div>
-            <h3>TEDx Lets Make</h3>
-            <p>Event branding</p>
-          </div>
-          <img src="img/portfolio_brand_mockup.png">
-        </article>
+          <article>
+            <div>
+              <h3>Boxtel through my eyes</h3>
+              <p>Poster design</p>
+            </div>
+            <img src="img/portfolio_poster1.jpg">
+          </article>
+          <article>
+            <div>
+              <h3>TEDx Lets Make</h3>
+              <p>Event branding</p>
+            </div>
+            <img src="img/portfolio_brand_mockup.png">
+          </article>
+          <article>
+            <div>
+              <h3>Highlightly</h3>
+              <p>Web design</p>
+            </div>
+            <img src="img/portfolio_app_landingpage.png">
+          </article>
       </div>
     </section>
-    </body>
+    <section id="work">
+      <h2>My work</h2>
+      <div>
+        <label class="filter" for="brand-design"><input type="checkbox" id="brand-design" value="brand design">Brand Design</label>
+        <label class="filter" for="web-design"><input type="checkbox" id="web-design" value="web design">Web Design</label>
+        <label class="filter" for="graphic-design"><input type="checkbox" id="graphic-design" value="graphic design">Graphic Design</label>
+        <label class="filter" for="poster-design"><input type="checkbox" id="poster-design" value="poster design">Poster Design</label>
+      </div>
+        <div>
+          <article>
+            <div>
+              <div>
+                <img src="icons/keyboard_arrow_right.svg">
+                <h3>TEDx Lets Make</h3>
+                <p>Event branding</p>
+              </div>
+              <img src="img/portfolio_brand_mockup.png">
+            </div>
+            <div class="hiddenDetails">
+              <div></div>
+              <h2>Hidden Details</h2>
+            </div>
+          </article>
+        </div>
+    </section>
+  </main>
+</body>
 </html>
