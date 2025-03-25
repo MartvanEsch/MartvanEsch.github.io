@@ -2,72 +2,193 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-/* Custom CSS */
+/* GENERAL STYLES */
 
 body {
-  filter: saturate(1);
   transition: all 0.5s ease-in-out;
-  height: 500vh;
+  transform: skew(0deg, 5deg);
+  opacity: 0;
+
   width: 90vw;
   background-color: white;
   padding: 1vw;
   box-sizing: border-box;
-  transform: skew(0deg, 5deg);
-  opacity: 0;
 }
-.visible {
-  transform: skew(0deg, 0deg);
-  opacity: 1;
+
+h1,
+h2,
+h3,
+p,
+label {
+  font-family: "Gantari", sans-serif;
+  color: white;
 }
+
+h1 {
+  font-weight: 600;
+  font-size: clamp(3rem, 8vw, 15rem);
+  white-space: nowrap;
+}
+h1 span {
+  font-size: 0.33em;
+}
+
+h1, h2 {
+  font-weight: 500;
+}
+h2 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  font-weight: 200;
+  font-size: clamp(0.66rem, 2vw, 1.5rem);
+}
+
 html {
   display: flex;
   justify-content: center;
-  background-color: whitesmoke; 
+  background-color: whitesmoke;
+}
+
+article {
+  background-color: black;
+  padding: 20px;
+}
+
+section {
+  margin-top: 5vh;
+  padding: 20px;
 }
 
 /* Navigation bar */
@@ -77,221 +198,170 @@ nav {
   display: flex;
   justify-content: flex-end;
   font-size: 1rem;
-
-  a {
+  margin-bottom: 20px;
+}
+  
+nav a {
     padding: 5px;
     margin-top: 15px;
     margin-left: 50px;
     background-color: black;
     color: whitesmoke;
     box-sizing: border-box;
-  }
+}
 
-  a:hover {
+nav a:hover {
     background-color: whitesmoke;
     color: black;
     border: 1px solid black;
-    padding: 4px; /* Adjust padding to maintain size */
-  }
+    padding: 4px;
 }
+
+
 @media (max-width: 768px) {
   nav {
     justify-content: space-between;
-    a {
-      margin-left: 0;
-    }
+  }
+  nav a {
+    margin-left: 0;
   }
 }
 
-/* Text styling */
-h1, h2, h3, p, label {
-  font-family: "Gantari", sans-serif;
-}
-
-h1 {
-  font-weight: 600;
-  font-size: clamp(1.5rem, 8vw, 15rem);
-  white-space: nowrap;
- span {
-  font-size: 0.33em;
- }
-}
-
-h2 {
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-h3 {
-  font-size: 2rem;
-  font-weight: 500;
-}
-
-p {
-  font-weight: 200;
-  font-size: 2rem;
-  margin-bottom: 100px;
-}
-
-/* Main introduction section */
+/* SPECIFIC STYLING */
 #introduction {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background-color: orange;
-  margin: 20px 0 40px;
+  margin-bottom: 40px;
   padding: 20px;
-
-  div { 
+}
+#introduction div {
     width: 10px;
     background-color: black;
     align-self: stretch;
-    margin: 10px; 
+    margin: 10px;
     margin-left: 50px;
     margin-right: 50px;
-  }
-  p {
+}
+#introduction p {
     font-weight: 600;
-    margin-bottom: unset;
+    padding: 10px;
+}
+#introduction h1, #introduction p {
+  color: black;
+}
+@media (max-width: 768px) {
+  #introduction {
+    flex-direction: column;
   }
 }
 
 #recent-projects {
-  padding: 20px;
   background-color: crimson;
   color: whitesmoke;
-
-  div {
+}
+#recent-projects div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-  }
-
-  article {
-    margin-top: 10px;
-    width: 50vw;
-    padding: 20px;
+    flex-wrap: nowrap;
+}
+#recent-projects article {
+    width: 33vw;
     background-color: black;
     display: flex;
-    margin-right: 20px;
-    justify-content: space-around;
-    
-    img {
-      height: 300px;
-      width: 300px;
+    justify-content: space-between;
+}
+#recent-projects article div {
+  flex-direction: column;
+  justify-content: space-around;
+}
+#recent-projects img {
+      height: 10vw;
+      width: 10vw;
       object-fit: cover;
-    }
-    h3 {
-      max-width: 15vw;
-    }
-    div {
+}
+#recent-projects h3 {
+  max-width: 15vw;
+  margin-right: 20px;
+}
+#recent-projects div {
+    gap: 20px;
       display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      margin-right: 20px;
+      flex-direction: row;
+      justify-content: space-between;
       align-items: start;
-      p {
-        font-size: 1rem;  
-      }
-    }
+}
+#recent-projects p {
+  font-size: 1em;
+}
+@media (max-width: 768px) {
+  #recent-projects div {
+    flex-direction: column;
   }
 }
 
 #work {
   margin-top: 5vh;
-  padding: 20px;
   background-color: lightblue;
   color: black;
-
-  h3 {
+}
+#work h3 {
     margin-right: 20px;
-  }
-  div {
+}
+#work div {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    .filter {
+    gap: 20px;
+}
+#work div article div {
+  flex-direction: row;
+}
+#work label {
       background-color: black;
       color: white;
       padding: 20px;
       user-select: none;
-      margin: 10px;
-      margin-left: 0px;
-      input {
-        display: none;
-      }
-    }
-  }
-  article:hover {
-    background-color: rgb(39, 39, 39);
-  }
-  article {
-    margin-top: 10px;
-    width: 100%;
-    padding: 20px;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px;
-    justify-content: space-between;
-    color: whitesmoke;
-
-    div:nth-child(2) {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-        div {
-        background-color: whitesmoke;
-        height: 5px;
-        align-self: stretch;
-        margin-right: 0;
-        }
-    }
-    
-    img {
-      height: 150px;
-      width: 150px;
-      object-fit: cover;
-      transition: all 0.1s ease-in-out;
-      transform: rotate(0deg);
-
-    }
-    h3 {
-      max-width: 15vw;
-    }
-    div {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-right: 20px;
-      }
-      p {
-        font-size: 1rem;  
-        margin-bottom: 0;
-      }
-    }
-  }
+      box-sizing: border-box;
+}
+#work input {
+  display: none;
+}
+#work img {
+  width: 3vw;
+  height: 3vw;
+}
+#work article {
+  align-self: stretch;
 }
 
+#about {
+  background-color: orange;
+}
+/* UTILITIES */
 .checked {
   background-color: whitesmoke !important;
   color: black !important;
   padding: 19px !important;
   border: 1px black solid;
 }
-.rotated { 
+
+.rotated {
   transform: rotate(90deg) !important;
 }
+
 .hiddenDetails {
   display: none !important;
+}
+
+.visible {
+  transform: skew(0deg, 0deg);
+  opacity: 1;
 }
