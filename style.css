@@ -2,366 +2,101 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
 body {
-  line-height: 1;
+	line-height: 1;
 }
-ol,
-ul {
-  list-style: none;
+ol, ul {
+	list-style: none;
 }
-blockquote,
-q {
-  quotes: none;
+blockquote, q {
+	quotes: none;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-/* GENERAL STYLES */
+/* Custom CSS */
 
-body {
-  transition: all 0.5s ease-in-out;
-  transform: skew(0deg, 5deg);
-  opacity: 0;
-
-  width: 90vw;
-  background-color: white;
-  padding: 1vw;
-  box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-p,
-label {
-  font-family: "Gantari", sans-serif;
+h1, h2 {
+  font-family: Montserrat, sans-serif;
+  text-align: center;
   color: white;
+  padding: 20px;
 }
 
 h1 {
-  font-weight: 600;
-  font-size: clamp(3rem, 8vw, 15rem);
-  white-space: nowrap;
-}
-h1 span {
-  font-size: 0.33em;
+  font-size: 5rem;
 }
 
-h1, h2 {
-  font-weight: 500;
-}
-h2 {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-h3 {
-  font-size: 2rem;
-}
-
-p {
-  font-weight: 200;
-  font-size: clamp(0.66rem, 2vw, 1.5rem);
-}
-
-html {
+body {
   display: flex;
   justify-content: center;
-  background-color: whitesmoke;
-}
-
-article {
-  background-color: black;
-  padding: 20px;
-}
-
-section {
-  margin-top: 5vh;
-  padding: 20px;
-}
-
-/* Navigation bar */
-nav {
-  font-family: "Gantari", sans-serif;
-  font-weight: 500;
-  display: flex;
-  justify-content: flex-end;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-  
-nav a {
-    padding: 5px;
-    margin-top: 15px;
-    margin-left: 50px;
-    background-color: black;
-    color: whitesmoke;
-    box-sizing: border-box;
-}
-
-nav a:hover {
-    background-color: whitesmoke;
-    color: black;
-    border: 1px solid black;
-    padding: 4px;
-}
-
-
-@media (max-width: 768px) {
-  nav {
-    justify-content: space-between;
-  }
-  nav a {
-    margin-left: 0;
-  }
-}
-
-/* SPECIFIC STYLING */
-#introduction {
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  background-color: orange;
-  margin-bottom: 40px;
-  padding: 20px;
-}
-#introduction div {
-    width: 10px;
-    background-color: black;
-    align-self: stretch;
-    margin: 10px;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-#introduction p {
-    font-weight: 600;
-    padding: 10px;
-}
-#introduction h1, #introduction p {
-  color: black;
-}
-@media (max-width: 768px) {
-  #introduction {
-    flex-direction: column;
-  }
+  background-color: black;
 }
 
-#recent-projects {
-  background-color: crimson;
-  color: whitesmoke;
-}
-#recent-projects div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    flex-wrap: nowrap;
-}
-#recent-projects article {
-    width: 33vw;
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
-}
-#recent-projects article div {
-  flex-direction: column;
-  justify-content: space-around;
-}
-#recent-projects img {
-      height: 10vw;
-      width: 10vw;
-      object-fit: cover;
-}
-#recent-projects h3 {
-  max-width: 15vw;
-  margin-right: 20px;
-}
-#recent-projects div {
-    gap: 20px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: start;
-}
-#recent-projects p {
-  font-size: 1em;
-}
-@media (max-width: 768px) {
-  #recent-projects div {
-    flex-direction: column;
-  }
+#overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: url(img/background.png)
 }
 
-#work {
-  margin-top: 5vh;
-  background-color: lightblue;
-  color: black;
-}
-#work h3 {
-    margin-right: 20px;
-}
-#work div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    gap: 20px;
-}
-#work div article div {
+#carousel {
+  clip-path: inset(10vh 0 10vh 0);
+  width: fit-content;
+  display: flex;
   flex-direction: row;
-}
-#work label {
-      background-color: black;
-      color: white;
-      padding: 20px;
-      user-select: none;
-      box-sizing: border-box;
-}
-#work input {
-  display: none;
-}
-#work img {
-  width: 3vw;
-  height: 3vw;
-}
-#work article {
-  align-self: stretch;
+  overflow: hidden;
+  height: 100vh;
+
+
+  div {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+
+    img {
+      height: 25vw;
+    }
+  }
 }
 
-#about {
-  background-color: orange;
-}
-/* UTILITIES */
-.checked {
-  background-color: whitesmoke !important;
-  color: black !important;
-  padding: 19px !important;
-  border: 1px black solid;
-}
-
-.rotated {
-  transform: rotate(90deg) !important;
-}
-
-.hiddenDetails {
-  display: none !important;
-}
-
-.visible {
-  transform: skew(0deg, 0deg);
-  opacity: 1;
+button {
+  width: 200px;
+  height: 50px;
 }

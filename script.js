@@ -1,36 +1,31 @@
-console.log('linked');
-setTimeout(function () {
-  document.querySelector('body').classList.add('visible');
-}, 100);
+let fotoArray = [];
+for (let i = 1; i < 30; i++) {
+  fotoArray.push(`foto${i}.jpg`);
+}
 
-let filterCheckboxes = document.querySelectorAll('input[type=checkbox]')
-console.log(filterCheckboxes)
-filterCheckboxes.forEach(element => {
-  element.addEventListener('change', (element) => {
-    let label = document.querySelector(`label[for="${element.target.id}"]`)
-    let checked = element.target.checked
-    label.classList.toggle('checked')
-  })
-});
+let imgElementLeftArray = document.querySelectorAll('#left img');
+let imgElementMiddleArray = document.querySelectorAll('#middle img');
+let imgElementRightArray = document.querySelectorAll('#right img');
 
-let workCards = document.querySelectorAll('#work article')
-workCards.forEach(card => {
-  card.addEventListener('click', (event) => {
-    card.children[0].children[0].children[0].classList.toggle('rotated')
-    card.children[1].classList.toggle('hiddenDetails')
-  })
-})
+for (let i = 0; i < imgElementLeftArray.length; i++) {
+  imgElementLeftArray[i].src = `./img/${fotoArray[Math.round(Math.random() * fotoArray.length)]}`;
+}
+for (let i = 0; i < imgElementMiddleArray.length; i++) {
+  imgElementMiddleArray[i].src = `./img/${fotoArray[Math.round(Math.random() * fotoArray.length)]}`;
+}
+for (let i = 0; i < imgElementRightArray.length; i++) {
+  imgElementRightArray[i].src = `./img/${fotoArray[Math.round(Math.random() * fotoArray.length)]}`;
+}
 
-document.querySelector('#workBtn').addEventListener('click', () => {
-  let workSection = document.querySelector('#work'); // Ensure this ID exists
-  if (workSection) {
-    let workSectionTop = workSection.offsetTop; // Get the top position of the section
-    console.log(workSectionTop);
-
-    window.scrollTo({
-      top: workSectionTop * 0.95, // Scroll to the top of the section
-      left: 0,
-      behavior: 'smooth' // Smooth scrolling
-    });
+document.querySelector('button').addEventListener('click', () => {
+  let randomElements = [
+    Math.round(Math.random() * imgElementLeftArray.length) + 1,
+    Math.round(Math.random() * imgElementMiddleArray.length) + 1,
+    Math.round(Math.random() * imgElementRightArray.length) + 1
+  ];
+  console.log(randomElements)
+  document.getElementById('left').scroll({ top: imgElementLeftArray[randomElements[0]].getBoundingClientRect().top, behavior: 'smooth' });
+  document.getElementById('middle').scroll({ top: imgElementMiddleArray[randomElements[1]].getBoundingClientRect().top, behavior: 'smooth' });
+  document.getElementById('right').scroll({ top: imgElementRightArray[randomElements[2]].getBoundingClientRect().top, behavior: 'smooth' });
   }
-});
+);
