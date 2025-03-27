@@ -17,7 +17,7 @@ for (let i = 0; i < imgElementRightArray.length; i++) {
   imgElementRightArray[i].src = `./img/${fotoArray[Math.round(Math.random() * fotoArray.length)]}`;
 }
 
-document.querySelector('button').addEventListener('click', () => {
+document.getElementById('dice').addEventListener('click', () => {
   let randomElements = [
     Math.round(Math.random() * imgElementLeftArray.length) + 1,
     Math.round(Math.random() * imgElementMiddleArray.length) + 1,
