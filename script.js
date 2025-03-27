@@ -29,3 +29,10 @@ document.querySelector('button').addEventListener('click', () => {
   document.getElementById('right').scroll({ top: imgElementRightArray[randomElements[2]].getBoundingClientRect().top, behavior: 'smooth' });
   }
 );
+
+const fullscreenBtn = document.getElementById("fullscreen")
+fullscreenBtn.addEventListener(`click`,function () {
+  document.querySelector("body").requestFullscreen()
+  fullscreenBtn.style.display = 'none'
+})
+ 
