@@ -66,6 +66,7 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 body::backdrop, body {
   background: url(img/background.png);
@@ -96,15 +97,15 @@ body::backdrop, body {
   display: flex;
   flex-direction: row;
   height: 100vh;
-  overflow: hidden; /* Prevents visual glitches */
+  overflow: hidden;
   position: absolute;
 }
 
 #carousel div {
   height: 100vh;
-  width: 20vh;
+  width: 30vh;
   background: url(img/achtergrondSlots.png);
-  background-size: 20vh auto; /* Ensure smooth tiling */
+  background-size: 30vh auto;
   background-repeat: repeat-y;
   animation: slots 0.5s infinite linear;
 }
@@ -114,7 +115,7 @@ body::backdrop, body {
     background-position-y: 0;
   }
   to {
-    background-position-y: 100vh; /* Use a multiple of the image height */
+    background-position-y: 100vh;
   }
 }
 
@@ -161,6 +162,23 @@ button {
   transform: scale(1);
 }
 
+#notification {
+  position: absolute;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 1.2s ease-out;
+}
+#notification > div {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  position: fixed;
+  left: 50vw;
+  top: 50vh;
+  background-color: black;
+  scale: 1;
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////// UTILITY */
 .hidden {
   transform: scale(0) !important;
   opacity: 0 !important;
