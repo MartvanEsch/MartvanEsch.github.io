@@ -8,10 +8,8 @@ fullscreenBtn.addEventListener(`click`,function () {
 })
   
 let combinatieArray = [];
-document.addEventListener('keydown', (e) => {
-  console.log(e.code);
+document.addEventListener('click', (e) => {
 
-  if (e.code === 'Space') {
     console.log('spinning');
     combinatieArray = [];
     document.querySelector('#overlay').classList.add('hidden');
@@ -59,7 +57,6 @@ document.addEventListener('keydown', (e) => {
       }
 
     }, 100);
-  }
 });
 
 function combinatieArrayBoolean(combinatieArray) {
