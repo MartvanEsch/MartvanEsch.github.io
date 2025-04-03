@@ -13,7 +13,7 @@ document.addEventListener('keydown', (e) => {
 
   if (e.code === 'Space') {
     console.log('spinning');
-
+    combinatieArray = [];
     document.querySelector('#overlay').classList.add('hidden');
     setTimeout(() => {
       document.querySelector('#popup').classList.add('shown');
@@ -22,7 +22,7 @@ document.addEventListener('keydown', (e) => {
       for (let i = 0; i < combinationImg.length; i++) {
         setTimeout(() => {
           toggleCarousels(true)
-          let randomPicture = Math.round(Math.random() * 0.5)
+          let randomPicture = Math.round(Math.random() * 3)
           combinatieArray.push(randomPicture)
           combinationImg[i].src = `img/foto${randomPicture}.jpg`
           combinationImg[i].classList.add('shown')
@@ -34,11 +34,26 @@ document.addEventListener('keydown', (e) => {
               console.log('won')
               state = true;
               document.getElementById('notification').classList.add('shown')
+              setTimeout(() => {
+                document.getElementById('notification').classList.remove('shown');
+                document.getElementById('profile').classList.add('shown')
+                document.querySelector('#profile img').src = `img/foto${combinatieArray[0]}.jpg`
+                setTimeout(() => {
+                  document.getElementById('profile').classList.remove('shown')
+                }, 5000)
+              }, 1000)
             } else {
               state = false;
             }
             toggleCarousels(state)
-            combinatieArray = [];
+            setTimeout(() => {
+             combinationImg.forEach((img) => {
+              img.classList.remove('shown') 
+             })
+              document.querySelector('#popup').classList.add('hidden')
+              document.querySelector('#popup').classList.remove('shown')
+            }, 1000)
+
           }
         }, i*0.85 * 1000 + 500);
       }

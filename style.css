@@ -49,7 +49,7 @@ table {
 
 /* Custom CSS */
 
-h1, h2 {
+h1, h2, p {
   font-family: Montserrat, sans-serif;
   text-align: center;
   color: white;
@@ -58,6 +58,10 @@ h1, h2 {
 
 h1 {
   font-size: 5rem;
+}
+
+h2 {
+  font-size: 3rem;
 }
 
 body {
@@ -115,7 +119,7 @@ body::backdrop, body {
     background-position-y: 0;
   }
   to {
-    background-position-y: 100vh;
+    background-position-y: 150vh;
   }
 }
 
@@ -177,6 +181,20 @@ button {
   top: 50vh;
   background-color: black;
   scale: 1;
+}
+
+#profile {
+  background-color: black;
+  position: fixed;
+  transform: scale(0);
+  opacity: 0;
+  h2 {
+    font-size: 5rem;
+    font-weight: 800;
+  }
+  p {
+    font-size: 3rem;
+  }
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////// UTILITY */
 .hidden {
