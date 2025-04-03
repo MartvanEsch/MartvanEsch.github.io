@@ -8,7 +8,7 @@ fullscreenBtn.addEventListener(`click`,function () {
 })
   
 let combinatieArray = [];
-document.addEventListener('touchstart', (e) => {
+document.querySelector('#testBtn').addEventListener('click', () => {
 
     console.log('spinning');
     combinatieArray = [];

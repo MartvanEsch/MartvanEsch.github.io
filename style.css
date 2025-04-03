@@ -188,6 +188,7 @@ button {
   position: fixed;
   transform: scale(0);
   opacity: 0;
+  top: 3vh;
   h2 {
     font-size: 5rem;
     font-weight: 800;
@@ -195,6 +196,15 @@ button {
   p {
     font-size: 3rem;
   }
+}
+
+#testBtn {
+  position: fixed;
+  top: 80vh;
+  width: 33vw;
+  height: 18vh;
+  font-size: 4rem;
+  background-color: black;
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////// UTILITY */
 .hidden {
