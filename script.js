@@ -8,7 +8,7 @@ fullscreenBtn.addEventListener(`click`,function () {
 })
   
 let combinatieArray = [];
-document.addEventListener('click', (e) => {
+document.addEventListener('touchstart', (e) => {
 
     console.log('spinning');
     combinatieArray = [];
@@ -50,7 +50,7 @@ document.addEventListener('click', (e) => {
              })
               document.querySelector('#popup').classList.add('hidden')
               document.querySelector('#popup').classList.remove('shown')
-            }, 1000)
+            }, 2000)
 
           }
         }, i*0.85 * 1000 + 500);
