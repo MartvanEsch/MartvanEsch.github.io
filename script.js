@@ -20,7 +20,7 @@ document.querySelector('#testBtn').addEventListener('click', () => {
       for (let i = 0; i < combinationImg.length; i++) {
         setTimeout(() => {
           toggleCarousels(true)
-          let randomPicture = Math.round(Math.random() * 3)
+          let randomPicture = Math.round(Math.random() * 2)
           combinatieArray.push(randomPicture)
           combinationImg[i].src = `img/foto${randomPicture}.jpg`
           combinationImg[i].classList.add('shown')
