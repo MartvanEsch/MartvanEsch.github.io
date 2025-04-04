@@ -109,7 +109,6 @@ button[type="submit"] {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 15vh;
     div {
       background-color: black;
       width: 33.333vw;
@@ -123,6 +122,10 @@ button[type="submit"] {
     margin-top: 1vh;
     font-size: 5vw;
   }
+  h2 {
+    margin-bottom: 20vh;
+  }
+
   img {
     transform: translateY(-100%);
     transition: transform 0.5s cubic-bezier(.82,2.07,.78,.72);
