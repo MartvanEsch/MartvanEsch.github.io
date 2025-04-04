@@ -1,74 +1,49 @@
-let carousels = document.querySelectorAll('#carousel *')
-console.log(carousels)
+let buttons = document.querySelectorAll('button')
+let balance = 50;
+let balanceText = document.querySelector('#slots p');
+balanceText.innerHTML = `Balance: $${balance}`;
+let slotsImgs = document.querySelectorAll('#slots img');
 
-const fullscreenBtn = document.getElementById("fullscreen")
-fullscreenBtn.addEventListener(`click`,function () {
-  document.querySelector("body").requestFullscreen()
-  fullscreenBtn.style.display = 'none'
+// SIGN UP //
+buttons[0].addEventListener('click', function() {
+  console.log("Sign Up button clicked");
+  document.getElementById("buttons").style.display = "none";
+  document.querySelector("form").style.display = "flex";
 })
-  
-let combinatieArray = [];
-document.querySelector('#testBtn').addEventListener('click', () => {
 
-    console.log('spinning');
-    combinatieArray = [];
-    document.querySelector('#overlay').classList.add('hidden');
+buttons[2].addEventListener('click', function() {
+  console.log("Submit button clicked");
+  document.querySelector("form").style.display = "none";
+  document.querySelector('#slots').style.display = "flex";
+}) 
+
+console.log(buttons)
+
+buttons[3].addEventListener('click', function() {
+  console.log("Spin");
+  balance -= 5;
+  balanceText.innerHTML = `Balance: $${balance}`;
+
+  let combination = [];
+  let delay = 0;
+
+  for (let i = 0; i < slotsImgs.length; i++) {
     setTimeout(() => {
-      document.querySelector('#popup').classList.add('shown');
-      let combinationImg = document.querySelectorAll('#popup img');
-
-      for (let i = 0; i < combinationImg.length; i++) {
-        setTimeout(() => {
-          toggleCarousels(true)
-          let randomPicture = Math.round(Math.random() * 2)
-          combinatieArray.push(randomPicture)
-          combinationImg[i].src = `img/foto${randomPicture}.jpg`
-          combinationImg[i].classList.add('shown')
-          console.log(combinatieArray)
-
-          if (combinatieArray.length === 3) {
-            let state;
-            if (combinatieArrayBoolean(combinatieArray)) {
-              console.log('won')
-              state = true;
-              document.getElementById('notification').classList.add('shown')
-              setTimeout(() => {
-                document.getElementById('notification').classList.remove('shown');
-                document.getElementById('profile').classList.add('shown')
-                document.querySelector('#profile img').src = `img/foto${combinatieArray[0]}.jpg`
-                setTimeout(() => {
-                  document.getElementById('profile').classList.remove('shown')
-                }, 5000)
-              }, 1000)
-            } else {
-              state = false;
-            }
-            toggleCarousels(state)
-            setTimeout(() => {
-             combinationImg.forEach((img) => {
-              img.classList.remove('shown') 
-             })
-              document.querySelector('#popup').classList.add('hidden')
-              document.querySelector('#popup').classList.remove('shown')
-            }, 2000)
-
-          }
-        }, i*0.85 * 1000 + 500);
-      }
-
-    }, 100);
+      let randomNum = Math.floor(Math.random() * 3);
+      slotsImgs[i].src = `img/foto${randomNum}.jpg`;
+      slotsImgs[i].style.transform = "translateY(0)";
+      combination.push(randomNum);
+    }, delay);
+    delay += 300; // Add 100ms delay for each image
+  }
 });
 
-function combinatieArrayBoolean(combinatieArray) {
-  if (combinatieArray[0] === combinatieArray[1] && combinatieArray[1] === combinatieArray[2]) {
-    return true;
-  }
-  return false;
-}
 
-function toggleCarousels(state) { 
-  carousels.forEach((carousel) => {
-    carousel.classList.toggle('paused', state)
-    });
-  console.log('carousel paused or started /// STATE: ' + state)
-}
+
+
+
+
+
+
+
+

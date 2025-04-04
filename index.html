@@ -11,38 +11,41 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="overlay">
-      <button id="fullscreen">FULLSCREEN</button>
-      <img src="logo.svg">
-      <h2>It starts with a gamble</h2>
-    </div>
+  <video id="video" autoplay muted>
+      <source src="video/Comp 1_1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
 
-    <div id="carousel">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+  <div id="buttons">
+    <button id="sign-up">Sign Up</button>
+    <button id="sign-in">Log In</button>
+  </div>
 
-    <div id="popup">
-      <h2>You have ___ </h2>
+  <form id="sign-up-form" class="form">
+    <h2>Sign Up</h2>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="slots">
+    <div>
       <div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
+        <img src="img/foto0.jpg">
+      </div>
+      <div>
+        <img src="img/foto0.jpg">
+      </div>
+      <div>
+        <img src="img/foto0.jpg">
       </div>
     </div>
-
-    <div id="notification">
-      <img src="img/overlayWin.png">
-    </div>
-    <div id="profile">
-      <h2>Robin</h2>
-      <p>+31 06 38351123</p>
-      <img src="">
-    </div>
-
-    <button id="testBtn" type="button">
-      TAP
-    </button>
+    <button id="spin">SPIN $5</button>
+    <p>Balance:: $25</p>
+  </div>
 </body>
 </html>
