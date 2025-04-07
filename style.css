@@ -11,7 +11,7 @@ html, body {
   height: 100%;
   font-family: Arial, sans-serif;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
 }
@@ -21,12 +21,13 @@ body, ::backdrop {
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   height: 100vh;
   width: 80vw;
 }
 
 video {
+  margin-top: 10vh;
   width: 80vw;
   object-fit: cover;
 }
@@ -50,6 +51,7 @@ form {
   align-items: left ;
   justify-content: center;
   width: 100%;
+  margin-bottom: 20vh;
 }
 
 h2 {
@@ -80,8 +82,38 @@ button[type="submit"] {
   align-self: center;
   font-size: 5vw;
 }
+
+header {
+  display: none;
+  padding-bottom: 5vh;
+  align-self: flex-end;
+  width: 80vw;
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: lightgray;
+    color: darkslategray;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    width: 80vw;
+    font-size: 5vw;
+    align-items: center;
+    justify-content: space-around;
+    img {
+      height: 125px;
+    }
+    a {
+      font-size: unset;
+      padding: 25px;
+    }
+  }
+}
+
 /* IDS */
 #buttons {
+  margin-bottom: 20vh;
   display: flex;
   flex-direction: column;
 }
@@ -124,6 +156,8 @@ button[type="submit"] {
   }
   h2 {
     margin-bottom: 20vh;
+    font-size: 5vw;
+    text-align: center;
   }
 
   img {
@@ -131,6 +165,40 @@ button[type="submit"] {
     transition: transform 0.5s cubic-bezier(.82,2.07,.78,.72);
   }
 }
+#shop {
+  display: none;;
+}
+#shop div {
+  width: 80vw;
+  background-color: lightgray;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 5vh;
+  div {
+    background-color: rgb(177, 177, 177);
+    width: 75vw;
+    margin-bottom: 2vh;
+    p {
+      font-size: 6rem;
+      font-weight: 800;
+    }
+    p:nth-child(2) {
+      font-size: 3rem;
+      font-weight: 400;
+    }
+  }
+  img {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 50vw;
+  }
+}
 
-
-
+/* Utilities */
+.active {
+  background: linear-gradient(to right, #911a80, #d42b45) !important;
+  padding: 25px;
+  border-radius: 10px;
+}
