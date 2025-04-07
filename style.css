@@ -196,6 +196,13 @@ header {
   }
 }
 
+#profile {
+  background-color: white;
+  border: 2px solid black;
+  width: 80vw;
+  position: fixed;
+}
+
 /* Utilities */
 .active {
   background: linear-gradient(to right, #911a80, #d42b45) !important;

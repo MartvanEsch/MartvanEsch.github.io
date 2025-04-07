@@ -53,7 +53,28 @@ buttons[2].addEventListener('click', function() {
     menuButtons[1].classList.add('active');
     menuButtons[2].classList.remove('active');
 
+    slotsStatus.innerHTML = "Ga voor de jackpot!";
+    balanceText.innerHTML = `Balance: $${balance}`;
   })
+  let itemsForSale = document.querySelectorAll('#shop div div');
+  for (let i = 0; i < itemsForSale.length; i++) {
+    itemsForSale[i].addEventListener('click', function() {
+      let itemPrice = parseFloat(itemsForSale[i].children[1].innerText.replace(/[^\d.]/g, ''));
+      balance += itemPrice;
+
+      document.querySelector("#slots").style.display = "flex";
+      document.querySelector("form").style.display = "none";
+      document.querySelector('#shop').style.display = "none";
+
+      menuButtons[0].classList.remove('active');
+      menuButtons[1].classList.add('active');
+      menuButtons[2].classList.remove('active');
+
+      slotsStatus.innerHTML = "Ga voor de jackpot!";
+      balanceText.innerHTML = `Balance: $${balance}`;
+    });
+  }
+
   menuButtons[2].addEventListener('click', function() {
     console.log("Shop button clicked");
 
@@ -64,14 +85,18 @@ buttons[2].addEventListener('click', function() {
     menuButtons[0].classList.remove('active');
     menuButtons[1].classList.remove('active');
     menuButtons[2].classList.add('active');
-  })
+  });
 }) 
 
 buttons[3].addEventListener('click', function() {
 
-
   document.getElementById('spin-audio').volume = 1
   document.getElementById('spin-audio').play();
+  if ( balance < 5) {
+    balanceText.innerHTML = `Balance: $${balance}`;
+    slotsStatus.innerHTML = "Niet genoeg saldo!";
+    return;
+  }
   balance -= 5;
   balanceText.innerHTML = `Balance: $${balance}`;
 
@@ -89,10 +114,11 @@ buttons[3].addEventListener('click', function() {
 
       if (combination.length === slotsImgs.length) {
         if (combination[0] === combination[1] && combination[1] === combination[2]) {
-          balance += 20;
           balanceText.innerHTML = `Balance: $${balance}`;
           slotsStatus.innerHTML = winStatus[Math.floor(Math.random() * winStatus.length)];
           document.getElementById('win-audio').play();
+
+          
         } else {
           slotsStatus.innerHTML = loseStatus[Math.floor(Math.random() * loseStatus.length)];
           document.getElementById('lose-audio').play();
