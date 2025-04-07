@@ -8,6 +8,13 @@ let loseStatus = ['GEEN MATCH! Nog één keer… of duizend?', 'Mis! Misschien a
 let winStatus = ['JACKPOT! Geniet van je tijdelijke validatie.', 'YES! Een match! Tijd voor oppervlakkige small talk en snelle teleurstelling.'];
 let backgroundAudio = document.getElementById('background-audio');
 
+let profileData = [
+  {name: 'Anouk', quote: 'Looking for a BF, text me!', age: '23', lengte: '1.73m', gewicht: '65kg', stars: 5},
+  {name: 'Ronald', quote: 'Got the money and the passion.', age: '26', lengte: '1.86m', gewicht: '79kg', stars: 4},
+  {name: 'Lisalotte', quote: 'I like to read books and drink wine.', age: '39', lengte: '1.66m', gewicht: '59kg', stars: 1},
+  {name: 'Ricky', quote: 'You can call me rizzlord!', age: '20', lengte: '1.76m', gewicht: '91kg', stars: 1}
+]
+
 backgroundAudio.addEventListener('ended', function() {
   setTimeout(() => {
     backgroundAudio.play();
@@ -53,7 +60,7 @@ buttons[2].addEventListener('click', function() {
     menuButtons[1].classList.add('active');
     menuButtons[2].classList.remove('active');
 
-    slotsStatus.innerHTML = "Ga voor de jackpot!";
+    slotsStatus.innerHTML = "Nog eens swipen? Ga voor de date!";
     balanceText.innerHTML = `Balance: $${balance}`;
   })
   let itemsForSale = document.querySelectorAll('#shop div div');
@@ -106,7 +113,7 @@ buttons[3].addEventListener('click', function() {
   lowerVolume(0, 2900);
   for (let i = 0; i < slotsImgs.length; i++) {
     setTimeout(() => {
-      let randomNum = Math.floor(Math.random() * 5);
+      let randomNum = Math.floor(Math.random() * 4);
       slotsImgs[i].src = `img/foto${randomNum}.jpg`;
       slotsImgs[i].style.transform = "translateY(0)";
       combination.push(randomNum);
@@ -118,7 +125,20 @@ buttons[3].addEventListener('click', function() {
           slotsStatus.innerHTML = winStatus[Math.floor(Math.random() * winStatus.length)];
           document.getElementById('win-audio').play();
 
-          
+          document.querySelector('#profile').style.display = "flex";
+          document.querySelector('#profile > img').src = `img/foto${combination[0]}.jpg`;
+          document.querySelector('#profile > h2').innerHTML = profileData[combination[0]].name;
+          document.querySelector('#age').innerHTML = profileData[combination[0]].age + " jaar";
+          document.querySelector('#gewicht').innerHTML = profileData[combination[0]].gewicht;
+          document.querySelector('#lengte').innerHTML = profileData[combination[0]].lengte;
+
+          document.querySelector('#profile > p').innerHTML = profileData[combination[0]].quote;
+          let stars = profileData[combination[0]].stars;
+          let starsElements ='';
+          for (let j = 0; j < stars; j++) { 
+            starsElements += '<img src="Asset 2.svg" alt="Star">';
+          }
+          document.querySelector('#stars').innerHTML = starsElements;
         } else {
           slotsStatus.innerHTML = loseStatus[Math.floor(Math.random() * loseStatus.length)];
           document.getElementById('lose-audio').play();
@@ -133,6 +153,7 @@ buttons[3].addEventListener('click', function() {
     }, delay);
     delay += 300;
   }
+  console.log(combination);
 });
 
 function lowerVolume(delay, wait) {
