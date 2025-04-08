@@ -29,7 +29,7 @@ document.addEventListener('keydown', (e) => {
       for (let i = 0; i < combinationImg.length; i++) {
         setTimeout(() => {
           toggleCarousels(true)
-          let randomPicture = Math.floor(Math.random() * 3)
+          let randomPicture = Math.floor(Math.random() * 1)
           combinatieArray.push(randomPicture)
           combinationImg[i].src = `img/foto${randomPicture}.jpg`
           combinationImg[i].classList.add('shown')
@@ -57,6 +57,7 @@ document.addEventListener('keydown', (e) => {
               }, 1000)
             } else {
               document.getElementById('lose-audio').play();
+              canActivate = true;
               state = false;
             }
             console.log('state: ' + state)
@@ -67,7 +68,6 @@ document.addEventListener('keydown', (e) => {
              })
               document.querySelector('#popup').classList.add('hidden')
               document.querySelector('#popup').classList.remove('shown')
-              canActivate = true;
             }, 2000)
 
           }
