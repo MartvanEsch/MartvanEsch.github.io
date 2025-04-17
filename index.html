@@ -1,102 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <script src="script.js" defer></script>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "@material/web/": "https://esm.run/@material/web/"
+        }
+      }
+    </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <video id="video" autoplay muted>
-      <source src="video/Comp 1_1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>
-
-  <div id="buttons">
-    <button id="sign-up">Sign Up</button>
-    <button id="sign-in">Log In</button>
-  </div>
-
-  <form id="sign-up-form" class="form">
-    <h2>Sign Up</h2>
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required>
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" required>
-    <button type="submit">Submit</button>
-  </form>
-
-  <div id="slots">
-    <div>
-      <div>
-        <img src="img/foto0.jpg">
-      </div>
-      <div>
-        <img src="img/foto0.jpg">
-      </div>
-      <div>
-        <img src="img/foto0.jpg">
-      </div>
-    </div>
-    <h2>Nog eens swipen? Ga voor de date!</h2>
-    <button id="spin">SPIN $5</button>
-    <p>Balance:: $25</p>
-  </div>
-
-  <div id="shop">
-    <div>
-      <h2>Shop</h2>
-      <div>
-        <img src="Muntje.svg">
-        <p>50 coins</p>
-        <p>$4.98</p>
-      </div>
-      <div>
-        <img src="Muntje.svg">
-        <p>100 coins</p>
-        <p>$8.98</p>
-      </div>
-      <div>
-        <img src="Muntje.svg">
-        <p>200 coins</p>
-        <p>$15.98</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="profile">
-    <h2>Name</h2>
-    <img src="" alt="profile pic">
-    <div>
-      <h3 id="age">Age</h3>
-      <h3 id="lengte">Lenght</h3>
-      <h3 id="gewicht">Weight</h3>
-    </div>
-    <div id="stars">
-    </div>
-    <p></p>
-    <button id="chat" type="button">Chat</button>
-    <button id="sell" type="button">Sell</button>
-    
-  </div>
-
-  <header>
-    <nav>
-      <a><img src="Frame 1.svg"></a>
-      <a class="active"><img src="Frame 2.svg"></a>
-      <a><img src="Frame 3.svg"></a>
-    </nav>
-  </header>
-
-  <audio id="lose-audio" src="sfx/11L-Wrong_answer_sound_e-1743768276209.mp3"></audio>
-  <audio id="win-audio" src="sfx/11L-Winning_sound_of_a_s-1743768167379.mp3"></audio>
-  <audio id="spin-audio" src="sfx/11L-Spinning_sound_of_a_-1743768020297.mp3"></audio>
-  <audio id="background-audio" src="sfx/11L-game_show_catchy_tun-1743774486680.mp3"></audio>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#port">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section style="background-color: #3C3E42;">
+            <div>
+                <h1>Mart van Esch</h1>
+                <p>Web, brand and graphic designer</p>
+                <div id="socials">
+                    <a id="linkedin" href="https://www.linkedin.com/in/mart-van-esch/" target="_blank">LinkedIn</a>
+                    <a id="instagram" href="https://www.instagram.com/martvanesch/" target="_blank">Instagram</a>
+                    <a id="pinterest" href="https://www.pinterest.com/martvanesch/" target="_blank">Pinterest</a>
+                </div>
+            </div>
+            <md-divider role="separator"></md-divider>
+            <div>
+                <h2>Design that connects.</h2>
+                <p>I’m a technical designer working across web, brand, and graphic design — building systems and visuals that feel thoughtful, flexible, and easy to use.</p>
+            </div>
+            <md-filled-tonal-button id="view-portfolio">View portfolio</md-filled-button>
+        </section>
+        <section style="background-color: #313237;">
+            <div>
+                <h2>Recent work</h2>
+                <p>A few selected projects across web, brand, and visual design. Each one shaped by curiosity, clarity, and a love for thoughtful systems.</p>
+            </div>
+            <md-divider role="separator"></md-divider>
+            <md-chip-set>
+                <md-filter-chip label="Filter"></md-filter-chip>
+                <md-filter-chip label="Filter"></md-filter-chip>
+                <md-filter-chip label="Filter"></md-filter-chip>
+            </md-chip-set>
+            <div>
+                <a></a>
+                <a></a>
+                <a></a>
+                <a></a>
+                <a></a>
+                <a></a>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h2>About</h2>
+                <p>As a kid, I always loved creating—whether it was with LEGO, in art class, or digitally. My first step into design was as a freelancer, making graphics for YouTubers, where I realized how much I enjoyed crafting visuals that fit a brand’s identity. Studying Communication & Multimedia Design deepened my passion for web and brand design, especially in creating interfaces that are both visually strong and functional.<br><br>In my free time I enjoy watching TV shows and movies, with Severance being a recent favorite. Football is another passion of mine—I support PSV and Arsenal.</p>
+            </div>
+            <img src="">
+        </section>
+        <section>
+            <h2>Contact</h2>
+            <div>           
+                <md-outlined-text-field label="Name" value="">
+                </md-outlined-text-field>
+                <md-outlined-text-field label="E-mail" value="">
+                </md-outlined-text-field>
+                <md-outlined-text-field label="Message" value="">
+                </md-outlined-text-field>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
