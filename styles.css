@@ -55,6 +55,7 @@ table {
 /* General Styles */
 * {
     color: #E2E2E7;
+    scroll-behavior: smooth;
 }
 body {
     background-color: #121317;
@@ -102,18 +103,23 @@ section {
     border-radius: 50px 50px 0px 0px;
     display: flex;
     flex-direction: column;
-    gap: clamp(3rem, 2vw, 5rem);
+    gap: clamp(2rem, 2vw, 4rem);
+    transform: translateY(-50px);
+    margin-bottom: -50px;
+    justify-content: start;
+    align-items: center;
     div {
-        margin-top: clamp(4rem, 2vw, 6rem);
         p {
             width: 90vw;
-            text-align: center;
+            text-align: left;
         }
     }
-    transform: translateY(-50px);
 }
 section:first-of-type {
     transform: translateY(0px);
+}
+section > :first-child {
+    margin-top: clamp(4rem, 2vw, 6rem);
 }
 section > :last-child {
     margin-bottom: calc(50px + clamp(4rem, 2vw, 6rem));
@@ -126,11 +132,128 @@ div {
     align-items: center;
 }
 
+img {
+    width: 95vw;
+}
+
 /* IDs */
 #socials {
     flex-direction: row;
+    margin-top: unset;
+    img {
+        width: clamp(1rem, 2vw, 4rem);
+    }
 }
 #view-portfolio {
     width: max-content;
     align-self: center;
+}
+#job-description {
+    text-align: center;
+}
+
+#portfolio > div:last-child a {
+    width: 95vw;
+    height: 95vw;
+    background-color: brown;
+    overflow: hidden;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img[data="wide"] {
+        height: 95vw;
+        width: unset;
+    }
+    img[data="tall"] {
+        height: unset;
+        width: 95vw;
+    }
+}
+
+#artwork {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    section {
+        height: 100vh;
+        width: 95vw;
+        border-radius: unset;
+        div {
+            h1 {
+               font-size:  clamp(1.5rem, 2vw, 6rem);; 
+            }
+            display: flex;
+            flex-direction: row;
+            img {
+                width: clamp(2rem, 2vw, 4rem);
+            }
+        }
+        > div {
+            width: 95vw;
+            justify-content: space-between;
+        }
+        div:last-child {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 95vw;
+
+            img {
+                width: 95vw;
+                margin-top: 2vh;
+            }
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: start;
+                    p {
+                    width: 95vw;
+                    }}
+        }
+    }
+}
+/* Media queries */
+@media (min-width: 800px) {
+    section:first-of-type > div:first-of-type{
+        flex-direction: row;
+        align-self: center;
+        width: 90vw;
+        white-space: nowrap;
+    }
+    section div {
+        margin-top: 0;
+    }
+    section > div:first-of-type {
+        margin-top: clamp(4rem, 2vw, 6rem);
+    }
+
+    #about {
+        img {
+            width: 33vw;
+        }
+    }
+
+    #portfolio > div:last-child a {
+        width: 25vw;
+        height: 25vw;
+        img[data="wide"] {
+            height: 25vw;
+        }
+        img[data="tall"] {
+            width: 25vw;
+        }
+    }
+
+    #artwork section div:last-child {
+        flex-direction: row;
+        div p {
+            width: 50vw
+        }
+        img {
+            margin-top: unset;
+            width: 33vw;
+        }
+    }
 }

@@ -27,7 +27,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#port">Portfolio</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -37,11 +37,11 @@
         <section style="background-color: #3C3E42;">
             <div>
                 <h1>Mart van Esch</h1>
-                <p>Web, brand and graphic designer</p>
+                <p id="job-description">Web, brand and graphic designer</p>
                 <div id="socials">
-                    <a id="linkedin" href="https://www.linkedin.com/in/mart-van-esch/" target="_blank">LinkedIn</a>
-                    <a id="instagram" href="https://www.instagram.com/martvanesch/" target="_blank">Instagram</a>
-                    <a id="pinterest" href="https://www.pinterest.com/martvanesch/" target="_blank">Pinterest</a>
+                    <a id="linkedin" href="https://www.linkedin.com/in/mart-van-esch/" target="_blank"><img src="img/linkedin.svg"></a>
+                    <a id="instagram" href="https://www.instagram.com/martvanesch/" target="_blank"><img src="img/instagram.svg"></a>
+                    <a id="pinterest" href="https://www.pinterest.com/martvanesch/" target="_blank"><img src="img/pinterest.svg"></a>
                 </div>
             </div>
             <md-divider role="separator"></md-divider>
@@ -49,36 +49,35 @@
                 <h2>Design that connects.</h2>
                 <p>I’m a technical designer working across web, brand, and graphic design — building systems and visuals that feel thoughtful, flexible, and easy to use.</p>
             </div>
-            <md-filled-tonal-button id="view-portfolio">View portfolio</md-filled-button>
+            <md-filled-tonal-button href="#portfolio" id="view-portfolio">View portfolio</md-filled-button>
         </section>
-        <section style="background-color: #313237;">
+        <section id="portfolio" style="background-color: #313237;">
             <div>
                 <h2>Recent work</h2>
                 <p>A few selected projects across web, brand, and visual design. Each one shaped by curiosity, clarity, and a love for thoughtful systems.</p>
             </div>
             <md-divider role="separator"></md-divider>
-            <md-chip-set>
+            <md-chip-set style="display: none;">
                 <md-filter-chip label="Filter"></md-filter-chip>
                 <md-filter-chip label="Filter"></md-filter-chip>
                 <md-filter-chip label="Filter"></md-filter-chip>
             </md-chip-set>
             <div>
-                <a></a>
-                <a></a>
-                <a></a>
-                <a></a>
-                <a></a>
-                <a></a>
+                <a href="artwork1.html"><img data="tall" src="img/poster1.jpg"></a>
+                <a href="artwork2.html"><img data="tall" src="img/poster2.png"></a>
+                <a href="artwork3.html"><img data="wide" src="img/desktop1.png"></a>
+                <a href="artwork4.html"><img data="wide" src="img/styleguide1.png"> </a>
+                <a href="artwork5.html"><img data="tall" src="img/poster3.png"></a>
             </div>
         </section>
-        <section>
+        <section id="about" style="background-color: #26282C;">
             <div>
                 <h2>About</h2>
                 <p>As a kid, I always loved creating—whether it was with LEGO, in art class, or digitally. My first step into design was as a freelancer, making graphics for YouTubers, where I realized how much I enjoyed crafting visuals that fit a brand’s identity. Studying Communication & Multimedia Design deepened my passion for web and brand design, especially in creating interfaces that are both visually strong and functional.<br><br>In my free time I enjoy watching TV shows and movies, with Severance being a recent favorite. Football is another passion of mine—I support PSV and Arsenal.</p>
             </div>
-            <img src="">
+            <img src="img/selfie.jpg" alt="Picture of owner of portfolio">
         </section>
-        <section>
+        <section id="contact" style="background-color: #1C1E21; display: none;">
             <h2>Contact</h2>
             <div>           
                 <md-outlined-text-field label="Name" value="">
