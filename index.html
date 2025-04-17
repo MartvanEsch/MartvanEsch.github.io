@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script defer src="js/index.js"></script>
 </head>
 <body>
     <header>
@@ -39,7 +40,7 @@
                 <h1>Mart van Esch</h1>
                 <p id="job-description">Web, brand and graphic designer</p>
                 <div id="socials">
-                    <a id="linkedin" href="https://www.linkedin.com/in/mart-van-esch/" target="_blank"><img src="img/linkedin.svg"></a>
+                    <a id="linkedin" href="https://www.linkedin.com/in/mart-van-esch-514201304/" target="_blank"><img src="img/linkedin.svg"></a>
                     <a id="instagram" href="https://www.instagram.com/martvanesch/" target="_blank"><img src="img/instagram.svg"></a>
                     <a id="pinterest" href="https://www.pinterest.com/martvanesch/" target="_blank"><img src="img/pinterest.svg"></a>
                 </div>
@@ -49,7 +50,7 @@
                 <h2>Design that connects.</h2>
                 <p>I’m a technical designer working across web, brand, and graphic design — building systems and visuals that feel thoughtful, flexible, and easy to use.</p>
             </div>
-            <md-filled-tonal-button href="#portfolio" id="view-portfolio">View portfolio</md-filled-button>
+            <md-filled-button href="#portfolio" id="view-portfolio">View portfolio</md-filled-button>
         </section>
         <section id="portfolio" style="background-color: #313237;">
             <div>
@@ -77,17 +78,15 @@
             </div>
             <img src="img/selfie.jpg" alt="Picture of owner of portfolio">
         </section>
-        <section id="contact" style="background-color: #1C1E21; display: none;">
+        <section id="contact" style="background-color: #1C1E21">
             <h2>Contact</h2>
-            <div>           
-                <md-outlined-text-field label="Name" value="">
-                </md-outlined-text-field>
-                <md-outlined-text-field label="E-mail" value="">
-                </md-outlined-text-field>
-                <md-outlined-text-field label="Message" value="">
-                </md-outlined-text-field>
-            </div>
-        </section>
+            <form id="contact-form">
+              <md-outlined-text-field label="Name" id="name" required></md-outlined-text-field>
+              <md-outlined-text-field label="E-mail" id="email" type="email" required></md-outlined-text-field>
+              <md-outlined-text-field label="Message" id="message" required></md-outlined-text-field>
+              <md-filled-tonal-button type="submit">Send</md-filled-tonal-button>
+            </form>
+          </section>          
     </main>
 </body>
 </html>
