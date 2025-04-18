@@ -103,13 +103,14 @@ table {
 * {
     color: var(--md-sys-color-on-surface);
     scroll-behavior: smooth;
+    transition: all 0.1s linear;
 }
 body {
     background-color: var(--md-sys-color-surface-container-lowest);
     width: 100vw;
     overflow-x: hidden;
 }
-h1, h2 {
+h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
 }
@@ -120,6 +121,10 @@ h2 {
 }
 h1 {
     font-size: clamp(2rem, 5vw, 4rem);
+}
+h3 {
+    z-index: 2;
+    opacity: 0;
 }
 p, a {
     font-family: 'Archivo', sans-serif;	
@@ -142,9 +147,6 @@ header nav ul {
     border-radius: 0px 0px 50px 50px ;
     height: fit-content;
     padding: 1vw;
-    li a {
-        color: inherit;
-    }
 }
 
 section {
@@ -162,6 +164,9 @@ section {
             text-align: left;
         }
     }
+}
+section div div {
+    position: relative;
 }
 section:first-of-type {
     transform: translateY(0px);
@@ -208,20 +213,12 @@ form {
 #portfolio > div:last-child a {
     width: 95vw;
     height: 95vw;
-    background-color: brown;
+    background-color: black;
     overflow: hidden;
     object-fit: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    img[data="wide"] {
-        height: 95vw;
-        width: unset;
-    }
-    img[data="tall"] {
-        height: unset;
-        width: 95vw;
-    }
 }
 
 #artwork {
@@ -267,6 +264,35 @@ form {
         }
     }
 }
+
+#portfolio a {
+    object-fit: cover;
+    background-size: cover !important;
+}
+#portfolio a:hover::before {
+    opacity: 0;
+}
+#portfolio a:hover h3 {
+    opacity: 1;
+}
+
+#portfolio a::before {
+    content: ''; /* Required for pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.66); /* Black overlay with 90% opacity */
+    z-index: 1; /* Place overlay above background but below content */
+    transition: opacity 0.1s linear; /* Smooth transition for opacity */
+    opacity: 0; /* Initial opacity */
+}
+
+#portfolio a:hover::before {
+    opacity: 1; /* Transition to 0 opacity on hover */
+}
+
 /* Media queries */
 @media (min-width: 800px) {
     section:first-of-type > div:first-of-type{
