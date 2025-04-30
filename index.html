@@ -24,88 +24,137 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="js/index.js"></script>
 </head>
-<body>
+<body class="flex">
     <header>
-        <nav>
-            <ul>
+        <nav class="flex">
+            <ul class="flex">
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section style="background-color: #3C3E42;">
-            <div>
-                <h1>Mart van Esch</h1>
-                <p id="job-description">Web, brand and graphic designer</p>
-                <div id="socials">
-                    <a id="linkedin" href="https://www.linkedin.com/in/mart-van-esch-514201304/" target="_blank"><img src="img/linkedin.svg"></a>
-                    <a id="instagram" href="https://www.instagram.com/martvanesch/" target="_blank"><img src="img/instagram.svg"></a>
-                    <a id="pinterest" href="https://www.pinterest.com/martvanesch/" target="_blank"><img src="img/pinterest.svg"></a>
+    <main class="flex">
+        <section id="hero" class="flex">
+            <div class="flex gap column">
+                <div class="flex gap-small space-between align-center">
+                    <h1>Mart van Esch</h1>
+                    <p id="job-description">Web, brand and graphic designer</p>
+                    <div class="flex gap-small justify-center">
+                        <a id="linkedin" href="https://www.linkedin.com/in/mart-van-esch-514201304/" target="_blank"><img src="img/icons/linkedin.svg"></a>
+                        <a id="instagram" style="display: none;" href="https://www.instagram.com/martvanesch/" target="_blank"><img src="img/icons/instagram.svg"></a>
+                        <a id="pinterest" href="https://nl.pinterest.com/martvanesch/" target="_blank"><img src="img/icons/pinterest.svg"></a>
+                    </div>
                 </div>
-            </div>
-            <md-divider role="separator"></md-divider>
-            <div>
-                <h2>Design that connects.</h2>
-                <p>I’m a technical designer working across web, brand, and graphic design — building systems and visuals that feel thoughtful, flexible, and easy to use.</p>
-            </div>
-            <md-filled-button href="#portfolio" id="view-portfolio">View portfolio</md-filled-button>
-        </section>
-        <section id="portfolio" style="background-color: #313237;">
-            <div>
-                <h2>Recent work</h2>
-                <p>A few selected projects across web, brand, and visual design. Each one shaped by curiosity, clarity, and a love for thoughtful systems.</p>
-            </div>
-            <md-divider role="separator"></md-divider>
-            <md-chip-set style="display: none;">
-                <md-filter-chip label="Filter"></md-filter-chip>
-                <md-filter-chip label="Filter"></md-filter-chip>
-                <md-filter-chip label="Filter"></md-filter-chip>
-            </md-chip-set>
-            <div>
-                <div>
-                    <a href="artwork1.html" style="background: url(img/poster1.jpg);">
-                        <h3>Boxtel through my eyes</h3>
-                    </a>
+                
+                <md-divider role="separator"></md-divider>
+
+                <div class="flex gap-small column">
+                    <h2><span>Design</span> that <span>connects.</span></h2>
+                    <p>I’m a technical designer working across web, brand, and graphic design — building systems and visuals that feel thoughtful, flexible, and easy to use.</p>
                 </div>
-                <div>
-                    <a href="artwork2.html" style="background: url(img/poster2.png);">
-                        <h3>TEDX, Lets Make</h3>
-                    </a>
-                </div>
-                <div>
-                    <a href="artwork3.html" style="background: url(img/desktop1.png);">
-                        <h3>Highlightly</h3>
-                    </a>
-                </div>
-                <div>
-                    <a href="artwork4.html" style="background: url(img/poster3.png);">
-                        <h3>Spirit Day</h3>
-                    </a>
-                </div>
-                <div>
-                    <a href="artwork5.html" style="background: url(img/styleguide1.png);">
-                        <h3>Keeb Haven</h3>
-                    </a>
-                </div>
+
+                <md-filled-button class="unset top" href="#portfolio" id="view-portfolio"><span>View portfolio</span></md-filled-button>
             </div>
         </section>
-        <section id="about" style="background-color: #26282C;">
-            <div>
-                <h2>About</h2>
-                <p>As a kid, I always loved creating—whether it was with LEGO, in art class, or digitally. My first step into design was as a freelancer, making graphics for YouTubers, where I realized how much I enjoyed crafting visuals that fit a brand’s identity. Studying Communication & Multimedia Design deepened my passion for web and brand design, especially in creating interfaces that are both visually strong and functional.<br><br>In my free time I enjoy watching TV shows and movies, with Severance being a recent favorite. Football is another passion of mine—I support PSV and Arsenal.</p>
+        <section id="portfolio" class="flex">
+            <div class="flex gap column">
+                <div class="flex gap-small column">
+                    <h3>Recent work</h3>
+                    <p>A few selected projects across web, brand, and visual design. Each one shaped by curiosity, clarity, and a love for thoughtful systems.</p>
+                </div>
+
+                <md-divider role="separator"></md-divider>
+
+                <md-chip-set>
+                    <md-filter-chip label="Web Design"></md-filter-chip>
+                    <md-filter-chip label="Branding"></md-filter-chip>
+                    <md-filter-chip label="Print & Posters"></md-filter-chip>
+                    <md-filter-chip label="Creative Projects"></md-filter-chip>
+                    <md-filter-chip label="Miscellaneous"></md-filter-chip>
+                </md-chip-set>
+
+                <div id="artwork" class="flex gap-small justify-center top flex-wrap">
+                    <div class="Print & Posters">
+                        <a class="flex align-center justify-center column gap-small" href="artwork1.html" style="background: url(img/poster1.jpg);">
+                            <h3>Boxtel through my eyes</h3>
+                            <p>Posters for my hometown</p>
+                        </a>
+                    </div>
+
+                    <div class="Branding">
+                        <a class="flex align-center justify-center column gap-small" href="artwork2.html" style="background: url(img/poster2.png);">
+                            <h3>TEDX, Lets Make</h3>
+                            <p>Branding for a TEDx event</p>
+                        </a>
+                    </div>
+
+                    <div class="Web Design">
+                        <a class="flex align-center justify-center column gap-small" href="artwork3.html" style="background: url(img/desktop1.png);">
+                            <h3>Highlightly</h3>
+                            <p>UI design for the Highlightly web app</p>
+                        </a>
+                    </div>
+
+                    <div class="Print & Posters">
+                        <a class="flex align-center justify-center column gap-small" href="artwork4.html" style="background: url(img/poster3.png);">
+                            <h3>Spirit Day</h3>
+                            <p>Poster for a purple friday event</p>
+                        </a>
+                    </div>
+
+                    <div class="Branding">
+                        <a class="flex align-center justify-center column gap-small" href="artwork5.html" style="background: url(img/styleguide1.png);">
+                            <h3>Keeb Haven</h3>
+                            <p>Branding for the Keeb Haven pop up store</p>
+                        </a>
+                    </div>
+
+                    <div class="Miscellaneous">
+                        <a class="flex align-center justify-center column gap-small" href="artwork6.html" style="background: url(img/misc/photography/DSC00364.webp); background-position: center;">
+                            <h3>Capturing life</h3>
+                            <p>Photography</p>
+                        </a>
+                    </div>
+
+                    <div class="Creative Projects">
+                        <a class="flex align-center justify-center column gap-small" href="artwork6.html" style="background: url(img/creative_projects/inspired_by_richard_sapper/1746024811243.webp); background-position: center;">
+                            <h3>Inspired by Richard Sapper</h3>
+                            <p>A remake of an object in the style of a prestiged designer</p>
+                        </a>
+                    </div>
+
+                    <div class="Creative Projects">
+                        <a class="flex align-center justify-center column gap-small" href="artwork6.html" style="background: url(img/creative_projects/waves_of_war/_storage_emulated_0_Android_media_com.whatsapp_WhatsApp_Media_WhatsApp\ Images_IMG-20250129-WA0000.jpg); background-position: -3.5vw;">
+                            <h3>Waves of War</h3>
+                            <p>An interactive installation for war museum Bevrijdende Vleugels</p>
+                        </a>
+                    </div>
+
+                </div>
             </div>
-            <img src="img/selfie.jpg" alt="Picture of owner of portfolio">
         </section>
-        <section id="contact" style="background-color: #1C1E21">
-            <h2>Contact</h2>
-            <form id="contact-form">
-              <md-outlined-text-field label="Name" id="name" required></md-outlined-text-field>
-              <md-outlined-text-field label="E-mail" id="email" type="email" required></md-outlined-text-field>
-              <md-outlined-text-field label="Message" id="message" required></md-outlined-text-field>
-              <md-filled-tonal-button type="submit">Send</md-filled-tonal-button>
-            </form>
+        <section id="about" class="flex">
+            <div class="flex gap">
+                <div class="flex gap-small column justify-center">
+                    <h3>About</h3>
+                    <p>As a kid, I always loved creating—whether it was with LEGO, in art class, or digitally. My first step into design was as a freelancer, making graphics for YouTubers, where I realized how much I enjoyed crafting visuals that fit a brand’s identity. Studying Communication & Multimedia Design deepened my passion for web and brand design, especially in creating interfaces that are both visually strong and functional.<br><br>In my free time I enjoy watching TV shows and movies, with Severance being a recent favorite. Football is another passion of mine—I support PSV and Arsenal.</p>
+                </div>
+
+                <img class="medium-image" src="img/selfie.jpg" alt="Picture of owner of portfolio">
+            </div>
+        </section>
+        <section id="contact" class="flex">
+            <div class="flex column gap">
+                <h2>Contact</h2>
+
+                <form id="contact-form" class="flex column gap-small">
+                    <md-outlined-text-field label="Name" id="name" required></md-outlined-text-field>
+                    <md-outlined-text-field label="E-mail" id="email" type="email" required></md-outlined-text-field>
+                    <md-outlined-text-field label="Message" id="message" required></md-outlined-text-field>
+                    <md-filled-tonal-button class="unset" type="submit">Send</md-filled-tonal-button>
+                </form>
+            </div>
           </section>          
     </main>
 </body>

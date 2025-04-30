@@ -30,3 +30,34 @@
     }
   });
 
+  let selectedArr = [];
+  window.addEventListener('DOMContentLoaded', () => {
+    const filterChips = document.querySelectorAll('md-filter-chip');
+    const projectCards = document.querySelectorAll('#artwork > *')
+
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const label = chip.getAttribute('label');
+        
+        if (selectedArr.includes(label)) {
+          selectedArr = selectedArr.filter(item => item !== label);
+        } else {
+          selectedArr.push(label);
+        }
+
+        projectCards.forEach(card => {
+          const cardClass = card.getAttribute('class');
+
+          if (selectedArr.includes(cardClass) || selectedArr.length === 0) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        })
+
+        console.log(selectedArr);
+      });
+    });
+  });
+  
+  

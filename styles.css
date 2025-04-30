@@ -98,248 +98,175 @@ table {
     --md-sys-color-surface-container: rgb(29 32 36);
     --md-sys-color-surface-container-high: rgb(40 42 47);
     --md-sys-color-surface-container-highest: rgb(51 53 58);
+
+    --page-width: 75vw;
+    --page-width-mobile: 90vw;
+    --horizantal-gap: 10vw;
+    --gap: 3vh;
+    --gap-big: 5vh;
+    --gap-small: 2vh;
   }
-/* General Styles */
+
+/* General styles */
 * {
-    color: var(--md-sys-color-on-surface);
-    scroll-behavior: smooth;
-    transition: all 0.1s linear;
+    transition: 0.1s all;
 }
-body {
-    background-color: var(--md-sys-color-surface-container-lowest);
-    width: 100vw;
-    overflow-x: hidden;
+a, p {
+    font-family: Archivo;
 }
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-}
-h2 {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-family: Montserrat;
     font-weight: 600;
-    align-items: start;
 }
 h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(3rem, 6vw, 6rem);
+    text-align: center;
+    font-weight: 700;
+}
+h2 {
+    font-size: clamp(1rem, 3vw, 3rem);
 }
 h3 {
-    z-index: 2;
-    opacity: 0;
+    font-size: clamp(1rem, 2vw, 2rem);
+    transform: skew(-15deg, 0deg);
 }
-p, a {
-    font-family: 'Archivo', sans-serif;	
-}
-
-header, nav {
+body {
+    flex-direction: column;
     width: 100vw;
-    display: flex;
-    margin-bottom: 3vh;
+    overflow-x: hidden;
+    gap: var(--gap-big);
+    background-color: var(--md-sys-color-surface-dim);
 }
-
+header nav ul li a {
+    color: var(--md-sys-color-on-secondary-container);
+}
 header nav ul {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    display: flex;
-    flex-direction: row;
-    background-color: var(--md-sys-color-primary-container);
-    justify-content: space-around;
+    justify-content: center;
+    gap: var(--gap);
+    width: var(--page-width);
+    height: 6vh;
     align-items: center;
-    width: 100vw;
-    border-radius: 0px 0px 50px 50px ;
-    height: fit-content;
-    padding: 1vw;
 }
-
+header nav {
+    justify-content: center;
+}
+header { 
+    background-color: var(--md-sys-color-secondary-container);
+    border-radius: 0 0 50px 50px;
+}
+main {
+    flex-direction: column;
+    align-items: center;
+}
 section {
-    border-radius: 50px 50px 0px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: clamp(2rem, 2vw, 4rem);
-    transform: translateY(-50px);
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    padding: 75px 0px;
+    border-radius: 50px 50px 0 0;
     margin-bottom: -50px;
-    justify-content: start;
-    align-items: center;
-    div {
-        p {
-            width: 90vw;
-            text-align: left;
-        }
-    }
 }
-section div div {
+/* IDS */
+#hero > div, #portfolio > div, #about > div, #contact > div{
+    width: var(--page-width);
+}
+#hero {
+    color: var(--md-sys-color-on-surface);
+    background-color: var(--md-sys-color-surface-container-lowest);
+}
+#portfolio {
+    background-color: var(--md-sys-color-surface-container-low);
+    color: var(--md-sys-color-on-surface);
+}
+
+#artwork a {
+    width: 20vw;
+    height: 20vw;
+    background-size: cover !important;
+    object-fit: cover;
+    color: var(--md-sys-color-on-surface);
+    overflow: hidden;
     position: relative;
-}
-section:first-of-type {
-    transform: translateY(0px);
-}
-section > :first-child {
-    margin-top: clamp(4rem, 2vw, 6rem);
-}
-section > :last-child {
-    margin-bottom: calc(50px + clamp(4rem, 2vw, 6rem));
-}
-
-div {
-    display: flex;
-    gap: clamp(1rem, 2vw, 2rem);
-    flex-direction: column;
-    align-items: center;
-}
-
-img {
-    width: 95vw;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(1rem, 2vw, 2rem);
-}
-/* IDs */
-#socials {
-    flex-direction: row;
-    margin-top: unset;
-    img {
-        width: clamp(1rem, 2vw, 4rem);
-    }
-}
-#view-portfolio {
-    width: max-content;
-    align-self: center;
-}
-#job-description {
     text-align: center;
 }
-
-#portfolio > div:last-child a {
-    width: 95vw;
-    height: 95vw;
-    background-color: black;
-    overflow: hidden;
-    object-fit: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#artwork {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    section {
-        height: 100vh;
-        width: 95vw;
-        border-radius: unset;
-        div {
-            h1 {
-               font-size:  clamp(1.5rem, 2vw, 6rem);; 
-            }
-            display: flex;
-            flex-direction: row;
-            img {
-                width: clamp(2rem, 2vw, 4rem);
-            }
-        }
-        > div {
-            width: 95vw;
-            justify-content: space-between;
-        }
-        div:last-child {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 95vw;
-
-            img {
-                width: 95vw;
-                margin-top: 2vh;
-            }
-                div {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: start;
-                    p {
-                    width: 95vw;
-                    }}
-        }
-    }
-}
-
-#portfolio a {
-    object-fit: cover;
-    background-size: cover !important;
-}
-#portfolio a:hover::before {
+#artwork a::before {
+    content: '';
+    background: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
     opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
-#portfolio a:hover h3 {
+#artwork a:hover::before {
+    opacity: 0.66;
+}
+#artwork h3, #artwork p {
+    opacity: 0;
+    z-index: 2  ;
+    width: 90%;
+}
+#artwork a:hover h3, #artwork a:hover p {
     opacity: 1;
 }
 
-#portfolio a::before {
-    content: ''; /* Required for pseudo-element */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.66); /* Black overlay with 90% opacity */
-    z-index: 1; /* Place overlay above background but below content */
-    transition: opacity 0.1s linear; /* Smooth transition for opacity */
-    opacity: 0; /* Initial opacity */
+#about {
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
 }
+#contact {
+    background-color: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface);
 
-#portfolio a:hover::before {
-    opacity: 1; /* Transition to 0 opacity on hover */
 }
+/* Classes */
+.flex {
+    display: flex;
+}
+.gap {
+    gap: var(--gap);
+}
+.gap-small {
+    gap: var(--gap-small)
+}
+.gap-big {
+    gap: var(--gap-big);
+}
+.column {
+    flex-direction: column;
+}
+.unset {
+    width: min-content;
+}
+.space-between {
+    justify-content: space-between;
+}
+.align-center {
+    align-items: center;
+}
+.justify-center {
+    justify-content: center;
+}
+.medium-image {
+    width: 33%;
+}
+.top {
+    margin-top: 5vh;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+/* Media */
+@media (max-width: 700px) {
+    /* General styles */
+    #hero div, #about > div, #portfolio > div {
+        width: var(--page-width-mobile);
+    }
 
-/* Media queries */
-@media (min-width: 800px) {
-    section:first-of-type > div:first-of-type{
-        flex-direction: row;
-        align-self: center;
-        width: 90vw;
-        white-space: nowrap;
-    }
-    section div {
-        margin-top: 0;
-    }
-    section > div:first-of-type {
-        margin-top: clamp(4rem, 2vw, 6rem);
-    }
-
-    #about {
-        img {
-            width: 33vw;
-        }
-    }
-
-    #portfolio > div:last-child a {
-        width: 25vw;
-        height: 25vw;
-        img[data="wide"] {
-            height: 25vw;
-        }
-        img[data="tall"] {
-            width: 25vw;
-        }
-    }
-    #portfolio > div:last-child {
-        flex-direction: row;
-        width: 95vw;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #artwork section div:last-child {
-        flex-direction: row;
-        div p {
-            width: 50vw
-        }
-        img {
-            margin-top: unset;
-            width: 33vw;
-        }
+    /* IDS */
+    #hero div div:first-child {
+        flex-direction: column;
     }
 }
