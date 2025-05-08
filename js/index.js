@@ -59,12 +59,22 @@
       });
     });
 
+    let params = new URLSearchParams(window.location.search);
     let settingsButtons = document.querySelectorAll('#settings md-switch');
-    let settings = {
-      'dutch': settingsButtons[0].selected,
-      'light': settingsButtons[1].selected
+    let settings = {}
+    if (params) {
+        settings = {
+            'dutch': params.get('dutch') === 'true',
+            'light': params.get('light') === 'true'
+        }
+    } else {
+        settings = {
+            'dutch': settingsButtons[0].selected,
+            'light': settingsButtons[1].selected
+          }
     }
-    updateSettings(settings)
+    updateSettings(settings) // Update the color mode
+    updateButtons(settingsButtons, settings) // Update the state of the buttons
 
     settingsButtons.forEach(button => {
       button.addEventListener('change', () => {
@@ -99,3 +109,12 @@ function updateLinks(searchParams) {
   });
 }
 
+function updateButtons(settingsButtons, settings) {
+  settingsButtons.forEach((button, index) => {
+      if (index === 0) {
+          button.selected = settings.dutch;
+      } else if (index === 1) {
+          button.selected = settings.light;
+      }
+  });
+}
