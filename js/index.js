@@ -58,6 +58,44 @@
         console.log(selectedArr);
       });
     });
+
+    let settingsButtons = document.querySelectorAll('#settings md-switch');
+    let settings = {
+      'dutch': settingsButtons[0].selected,
+      'light': settingsButtons[1].selected
+    }
+    updateSettings(settings)
+
+    settingsButtons.forEach(button => {
+      button.addEventListener('change', () => {
+        settings.dutch = settingsButtons[0].selected;
+        settings.light = settingsButtons[1].selected;
+        updateSettings(settings);
+      })
+    })
   });
-  
-  
+
+function updateSettings(settings) {
+  if (settings.light) { // Enable light mode
+    document.documentElement.setAttribute('data-mode', 'light');
+    console.log('light mode enabled')
+  } else {
+    document.documentElement.removeAttribute('data-mode');
+    console.log('light mode disabled')
+  }
+
+  let searchParams = new URLSearchParams();
+  searchParams.set('light', settings.light);
+  searchParams.set('dutch', settings.dutch);
+  updateLinks(searchParams);
+}
+
+function updateLinks(searchParams) {
+  const links = document.querySelectorAll('a');
+  links.forEach(link => {
+    const url = new URL(link.href);
+    url.search = searchParams.toString();
+    link.href = url.toString();
+  });
+}
+
