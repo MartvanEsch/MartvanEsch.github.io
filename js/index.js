@@ -1,3 +1,43 @@
+let contentArr = [
+  {
+      key: "boxtel_through_my_eyes",
+      header: "Boxtel Through My Eyes",
+      body: "Boxtel Through My Eyes is a personal visual project that reimagines my hometown, Boxtel, through different artistic styles. Using photography, design, and typography, I explored how places hold stories and inspiration. From historic buildings to local graffiti, each poster captures my view of Boxtel as a layered, expressive, and creative space—a hidden treasure chest of art.",
+      imgArray: ["img/print_&_posters/boxtel_through_my_eyes/poster1.jpg"]
+  },
+  {
+      key: "tedx_lets_make",
+      header: "TEDx, Lets Make",
+      body: "As a multimedia design student, I reimagined the TEDx brand through a bold, Bauhaus-inspired lens, merging modernist abstraction with the raw spirit of construction and ideation. The concept, titled “Let’s Make,” symbolizes TEDx as a space of constant building — of ideas, of communities, of futures. The visual identity is grounded in the use of geometric, abstract forms that subtly reference construction cranes — a metaphor for the mental and cultural scaffolding that TEDx provides. The minimalist color palette and strong typographic structure pay homage to the Bauhaus school’s utilitarian beauty, while motion design elements and layout experiments bring a contemporary edge. This rebrand isn't just aesthetic — it reframes TEDx as a platform in motion, emphasizing progress, collaboration, and the architecture of thought. Every shape, every form, every animation is designed to communicate that powerful ideas aren’t just talked about — they’re built.",
+      imgArray: ["img/branding/tedx_lets_make/poster2.png"]
+  },
+  {
+      key: "error",
+      header: "Boxtel Through My Eyes",
+      body: "I recently undertook the exciting challenge of reimagining a classic CD player in the iconic style of Richard Sapper. Inspired by Sapper's emphasis on sleek lines, minimalist form, and functional elegance, I approached the redesign with a focus on integrating modern technology seamlessly into a timeless aesthetic. The result is a reinterpretation that honors Sapper's design philosophy while enhancing usability and visual appeal. This project not only allowed me to showcase my skills in industrial design but also provided an opportunity to pay homage to a design legend whose work continues to inspire innovation in the field.",
+      imgArray: ["img/creative_projects/inspired_by_richard_sapper/1746024811243.webp"]
+  },
+  {
+      key: "capturing_life",
+      header: "Capturing Life",
+      body: "Photography has always drawn me in because of its unique ability to tell a story through composition and color. I’m fascinated by how the framing of a shot, the balance of elements, and the interplay of light and hue can evoke emotion, suggest a narrative, or capture a fleeting moment in time. For me, each photograph is a chance to explore visual storytelling—transforming everyday scenes into something more expressive and intentional.",
+      imgArray: [
+          "img/misc/photography/DSC00085.webp",
+          "img/misc/photography/DSC00158.webp",]
+  }
+]
+let allImgs = [];
+contentArr.forEach(project => {
+  project.imgArray.forEach(image => {
+    allImgs.push(image)
+  })
+})
+console.log(allImgs)
+let hiddenImage = document.getElementById('hiddenImage')
+allImgs.forEach(image => {
+  hiddenImage.src = image
+  console.log('loading image: ' + image)
+})
 
   document.getElementById('contact-form').addEventListener('submit', async function (e) {
     e.preventDefault();

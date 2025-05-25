@@ -174,8 +174,7 @@ h1, h2, h3 {
     font-weight: 600;
 }
 h1 {
-    font-size: clamp(3rem, 6vw, 6rem);
-    text-align: center;
+    font-size: clamp(3rem, 2vw, 4rem);
     font-weight: 700;
 }
 h2 {
@@ -183,9 +182,10 @@ h2 {
 }
 h3 {
     font-size: clamp(1rem, 2vw, 2rem);
-    transform: skew(-15deg, 0deg);
+    transform: skew(-9deg);
 }
 body {
+    font-size: clamp(1.5rem, 2vw, 2rem);
     flex-direction: column;
     width: 100vw;
     overflow-x: hidden;
@@ -315,6 +315,7 @@ form > *{
 
 #images img {
     max-width: 66vw;
+    max-height: 88vh;
 }
 #project main, #project main > div {
     width: var(--page-width);
@@ -325,6 +326,13 @@ form > *{
 #project h1, #project p {
     color: var(--md-sys-color-on-surface);
 }
+#description > div > div {
+    width: var(--page-width) !important;
+}
+#description h1 {
+    font-size: clamp(2rem, 2vw, 3rem);
+}
+
 /* Classes */
 .flex {
     display: flex;
@@ -405,7 +413,11 @@ form > *{
         max-width: var(--page-width-mobile);
         max-height: 80vh;
     }
-    #project main, #project main > div {
-        width: var(--page-width);
+    #project main, #project main > div, #description > div {
+        width: var(--page-width-mobile);
     }
+    #description > div > div {
+        width: var(--page-width-mobile) !important;
+    }
+    
 }
