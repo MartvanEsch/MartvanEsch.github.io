@@ -12,11 +12,24 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    src: url("../fonts/AtkinsonHyperlegible-Regular.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
 
 h1 {
-  font-family: "Nyght Serif", serif;
-  font-size: 4rem;
-  transition: opacity 1s;
+    font-size: 8rem;
+}
+h1, #container {
+    transition: opacity 1s;
+}
+h4 {
+    font-size: 6rem;
+}
+h2 {
+    font-size: 4rem;
 }
 
 body {
@@ -26,16 +39,109 @@ body {
   height: 100vh;
 }
 
+@media (min-width: 768px) {
+    #container {
+        width: 50vw !important;
+    }
+    
+}
+
 header {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Nyght Serif", serif;
+    color: darkcyan;
   div {
     display: flex;
+    gap: 3vw;
     flex-direction: row;
     align-items: center;
   }
   img {
-    width: 50px;
+    width: 15vw;
   }
 }
+
+main {
+    gap: 3vh;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(169, 62%, 67%);
+    align-items: center;
+    padding-top: 5vh;
+    border-radius: 250px 250px 75px 75px;
+}
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+button {
+    font-size: 5rem;
+    margin-left: 5vw;
+    margin-right: 5vw; 
+    padding: 60px;
+    transform: translateY(50px);
+    border-radius: 75px;
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    color: darkcyan;
+    background-color: #ffed00;
+}
+
+#stressniveau {
+    background-image: url(img/pexels-pixabay-247765.avif);
+    background-size: cover;
+    font-size: 7rem;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 75px;
+    color: white;
+    font-family: 'Nyght Serif', serif;
+}
 #container {
-  transition: opacity 1s;
+    width: 87vw;
+    height: 90vh;
+    gap: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#timer {
+    font-size: 6rem;
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    color: darkcyan;
+}
+
+.divider {
+    width: 90vw;
+    height: 1px;
+    background-color: darkcyan;
+}
+
+#slither {
+    transform: translateX(-33vw);
+    height: 1vh;
+    margin-top: 6vh;
+}
+
+#melding {
+    font-family: "Atkinson Hyperlegible", serif;
+    margin-left: 8vw;
+    border-top: 2px solid #3EC3BE;
+    border-left: 2px solid #3EC3BE;
+    padding: 50px;
+    border-radius: 75px 0 0 0;
+    color: grey;
+    img {
+        width: 20vw;
+        margin-left: 5vw;
+    }
+    display: flex;
+    flex-direction: row;
 }
