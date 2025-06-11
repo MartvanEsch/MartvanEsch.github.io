@@ -6,13 +6,13 @@
 
 @font-face {
     font-family: "Nyght Serif";
-    src: url("../fonts/NyghtSerif-RegularItalic.woff2") format("woff2");
+    src: url("../fonts/NyghtSerif-RegularItalic.woff2") format("woff2"); /* https://www.tunera.xyz/fonts/nyght-serif/ */
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: "Atkinson Hyperlegible";
-    src: url("../fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
+    src: url("../fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype"); /* https://fonts.google.com/specimen/Atkinson+Hyperlegible */
     font-weight: normal;
     font-style: normal;
 }
@@ -109,7 +109,7 @@ main {
 }
 
 #stressniveau {
-    background-image: url(img/pexels-pixabay-247765.avif);
+    background-image: url(img/pexels-pixabay-247765.avif); /* https://www.pexels.com/photo/close-up-of-splashing-water-247765/ */
     background-size: cover;
     font-size: 2rem;
     display: flex;
